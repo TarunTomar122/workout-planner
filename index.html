@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Workout Planner ✨</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ Daily Workout Plan ✨</h1>
+            <p class="subtitle">Your personalized fitness journey</p>
+        </header>
+
+        <div class="controls">
+            <div class="settings">
+                <label for="exerciseCount">Exercises per workout:</label>
+                <select id="exerciseCount">
+                    <option value="2">2 exercises</option>
+                    <option value="3" selected>3 exercises</option>
+                    <option value="4">4 exercises</option>
+                    <option value="5">5 exercises</option>
+                </select>
+            </div>
+            <button id="generatePlan" class="btn-primary">
+                🎲 Generate New Plan
+            </button>
+        </div>
+
+        <div id="workoutPlan" class="workout-plan">
+            <!-- Workout plan will be generated here -->
+        </div>
+
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="totalWorkouts">0</span>
+                <span class="stat-label">Workouts Completed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="totalExercises">0</span>
+                <span class="stat-label">Total Exercises</span>
+            </div>
+        </div>
+
+        <!-- Timer Modal -->
+        <div id="timerModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="timerExerciseName">Exercise Timer</h3>
+                    <button id="closeTimer" class="close-btn">&times;</button>
+                </div>
+                <div class="timer-display">
+                    <div id="timerTime">00:30</div>
+                    <div class="timer-controls">
+                        <button id="timerStart" class="btn-timer">Start</button>
+                        <button id="timerPause" class="btn-timer">Pause</button>
+                        <button id="timerReset" class="btn-timer">Reset</button>
+                    </div>
+                    <div class="timer-presets">
+                        <button class="preset-btn" data-time="30">30s</button>
+                        <button class="preset-btn" data-time="60">1m</button>
+                        <button class="preset-btn" data-time="90">1.5m</button>
+                        <button class="preset-btn" data-time="120">2m</button>
+                    </div>
+                </div>
+                <button id="completeExercise" class="btn-complete">
+                    ✅ Mark as Completed
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/exercises.js"></script>
+    <script src="js/timer.js"></script>
+    <script src="js/stats.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html> 
